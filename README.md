@@ -1,5 +1,9 @@
 # SERIAL-IN-SERIAL-OUT-SHIFTREGISTER
 
+NAME: GOPIKA A
+
+REG NO: 212224100017
+
 **AIM:**
 
 To implement  SISO Shift Register using verilog and validating their functionality using their functional tables
@@ -25,18 +29,44 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Write the Verilog module with inputs clk, reset, serial_in, and output serial_out.
+
+2.Implement logic to shift input bits into the register on every clock pulse.
+
+3.Create a Verilog testbench to apply input sequences and generate clock signals.
+
+4.Simulate the design and observe the output waveforms using a simulator.
+
+5.Compare simulation results with the functional table to validate correctness.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
-
-Developed by: RegisterNumber:
-
-*/
+```
+module siso(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
+```
 
 **RTL LOGIC FOR SISO Shift Register**
 
+![Screenshot (99)](https://github.com/user-attachments/assets/e6b1b49b-ea56-4a48-bfa5-70340b25126f)
+
+
 **TIMING DIGRAMS FOR SISO Shift Register**
 
+![Screenshot (98)](https://github.com/user-attachments/assets/2e8b21b6-5795-4c5b-8180-de7238851d16)
+
 **RESULTS**
+
+Thus THE-SERIAL-IN-SERIAL-OUT-SHIFTREGISTER was successfully verified.
